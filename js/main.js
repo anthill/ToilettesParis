@@ -8,46 +8,52 @@ var render = require('./renderMap.js');
 var activateFilters = require('./modeActivation.js');
 
 var typologieToCSSClass = {
-	"Urinoir": "urinoir",
-	"Sanitaire automatique": "sanitaire",
-	"Sanitaire automatique avec urinoir": "sanitaire",
-	"Chalet de nécessité": "sanitaire"
+	"WCG": "sanitaire",
+	"WCH": "sanitaire",
+	"WCH2": "sanitaire",
+	"WCP": "sanitaire",
+	"WCPC": "sanitaire"
 };
 
-
+function isHandi(type){
+	if (type === 'WCH' || type === 'WCH2')
+		return true;
+	else return false;
+}
 
 /// MAIN CODE
 
 // Get toilets position
-var toilettesP = getToilets('data/toilettes.json')
+var toilettesP = getToilets('data/sanisettesparis2011.json')
 	.then(function(data){
-		console.log('raw', data);
+		// console.log('raw', data);
+		// console.log('raw', data[0]);
 		
-		return data["d"].map(function(t){
-			var test = typologieToCSSClass[t["typologie"]];
-			var option = t["options"] ? true: false;
-			if (!test)
-				console.error(t);
-			else {
+		return data.map(function(t){
+			// var test = typologieToCSSClass[t["typologie"]];
+			var option = isHandi(t.fields.info);
+
+			// if (!test)
+			// 	console.error(t);
+			// else {
 				return {
-					lng: parseFloat(t["x_long"]),
-					lat: parseFloat(t["y_lat"]),
-					nom: t["nom"],
-					// typologie: t["typologie"],
-					class: typologieToCSSClass[t["typologie"]],
+					lng: parseFloat(t.geometry.coordinates[0]),
+					lat: parseFloat(t.geometry.coordinates[1]),
+					class: typologieToCSSClass[t.fields.info],
 					handicap: option,
 					marker: undefined
 				};
-			}
+			// }
 		});
 	});
 
-var modes = ['urinoir', 'sanitaire', 'handicap'];
+var modes = ['sanitaire', 'handicap'];
 
 
 // render points on map regardless of geolocation
 toilettesP
 	.then(function(toilettes){
+		console.log(toilettes);
         render({
             toilettes: toilettes,
             position: undefined,

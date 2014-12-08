@@ -2,11 +2,11 @@
 
 var L = require('leaflet');
 
-var BORDEAUX_COORDS = [44.84, -0.57];
+var PARIS_COORDS = [48.8566, 2.3522];
 
 // set map options
 var map = L.map('map', {
-	center: BORDEAUX_COORDS,
+	center: PARIS_COORDS,
 	zoom: 12,
 	minZoom: 12 // minZoom is set b/c there is no sense to zoom out of Bordeaux
 });

@@ -30,12 +30,12 @@ function drawToilet(toilet){
 	// Add icons from FontAwesome
 	var myHtml = '';
 
-	if (toilet.class === 'sanitaire') {
+	// if (toilet.class === 'sanitaire') {
 		myHtml += '<i class="fa fa-female"></i><i class="fa fa-male"></i>\n';
-	}
-	else {
-		myHtml += '<i class="fa fa-male urinoir"></i>\n';
-	}
+	// }
+	// else {
+	// 	myHtml += '<i class="fa fa-male urinoir"></i>\n';
+	// }
 	
 	if (toilet.handicap === true){
 		myHtml += '<div class="pins"><i class="fa fa-fw fa-wheelchair"></i></div>\n';

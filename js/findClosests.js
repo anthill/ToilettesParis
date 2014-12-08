@@ -24,6 +24,8 @@ module.exports = function(list, position){
 	closestLats.push(position.lat);
 	closestLngs.push(position.lng);
 
+
+
 	var itinerariesPs = closestToilettes.map(function(t){ return itinerary(position, t); });
 
 	// When all itineraries are computed
