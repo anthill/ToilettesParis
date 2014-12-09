@@ -1,5 +1,5 @@
 {
-  "name": "ToilettesBordeaux",
+  "name": "ToilettesParis",
   "version": "0.0.0",
   "description": "## Données",
   "main": "index.js",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/anthill/ToilettesBordeaux.git"
+    "url": "git://github.com/anthill/ToilettesParis.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anthill/ToilettesBordeaux/issues"
+    "url": "https://github.com/anthill/ToilettesParis/issues"
   },
   "dependencies": {
     "browserify": "~6.1.0",
