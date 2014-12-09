@@ -47,7 +47,7 @@ var toilettesP = getToilets('data/sanisettesparis2011.json')
 		});
 	});
 
-var modes = ['sanitaire', 'handicap'];
+var modes = ['urinoir', 'sanitaire', 'handicap'];
 
 
 // render points on map regardless of geolocation
