@@ -1,8 +1,9 @@
-# ToilettesBordeaux
+# ToilettesParis
+Warning: this project is just a rapid adaptation of the ToilettesBordeaux project. Please refer to [this repository](https://github.com/anthill/ToilettesBordeaux) for original code.
 
 ## Données
 
-http://opendata.bordeaux.fr/content/toilettes-publiques
+http://opendata.paris.fr/explore/dataset/sanisettesparis2011/?tab=export
 
 ## Map
 
