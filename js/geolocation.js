@@ -22,11 +22,7 @@ var exp = {
 
         return new Promise(function(resolve, reject){
             function success(position){
-                // var pos = formatGeoloc(position);
-                var pos = {
-                    lat: 48.8566,
-                    lng: 2.3522
-                };
+                var pos = formatGeoloc(position);
                 lastPosition = pos;
                 resolve(pos);
             }
