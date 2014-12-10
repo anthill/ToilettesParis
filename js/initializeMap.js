@@ -7,8 +7,8 @@ var PARIS_COORDS = [48.8566, 2.3522];
 // set map options
 var map = L.map('map', {
 	center: PARIS_COORDS,
-	zoom: 12,
-	minZoom: 12 // minZoom is set b/c there is no sense to zoom out of Bordeaux
+	zoom: 10,
+	minZoom: 10 // minZoom is set b/c there is no sense to zoom out of Bordeaux
 });
 
 map.setMaxBounds(map.getBounds()); // MaxBounds are set because there is no sense to pan out of Bordeaux
